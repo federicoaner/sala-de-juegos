@@ -7,9 +7,11 @@ import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { JuegosComponent } from './components/juegos/juegos.component';
-import { TatetiComponent } from './components/tateti/tateti.component';
-import { MemotestComponent } from './components/memotest/memotest.component';
+
+
 import { PreguntadosComponent } from './components/preguntados/preguntados.component';
+import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
+import { MayormenorComponent } from './components/mayormenor/mayormenor.component';
 
 
 const routes: Routes = [
@@ -29,9 +31,9 @@ const routes: Routes = [
  children:[
 
   
- {path:'tateti',component:TatetiComponent},
- {path:'memotest',component:MemotestComponent},
- {path:'preguntados',component:PreguntadosComponent}
+ {path:'preguntados',component:PreguntadosComponent},
+ {path:'ahorcado',component:AhorcadoComponent},
+ {path:'mayor-menor',component:MayormenorComponent}
   
 
  ]},

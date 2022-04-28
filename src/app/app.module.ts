@@ -49,7 +49,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
    AngularFireAuthModule,
    AngularFirestoreModule,
    provideFirebaseApp(() => initializeApp(environment.firebase)),
-   provideFirestore(() => getFirestore()),
+   provideFirestore(() => getFirestore())
    
 
   ],

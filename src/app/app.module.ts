@@ -13,6 +13,15 @@ import { JuegosComponent } from './components/juegos/juegos.component';
 import { PreguntadosComponent } from './components/preguntados/preguntados.component';
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './components/mayormenor/mayormenor.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
+
+
 
 
 @NgModule({
@@ -31,7 +40,18 @@ import { MayormenorComponent } from './components/mayormenor/mayormenor.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+   // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    //provideAuth(() => getAuth()),
+    //provideFirestore(() => getFirestore()),
+    //agregueyo
+   AngularFireModule.initializeApp(environment.firebaseConfig),
+   AngularFireAuthModule,
+   AngularFirestoreModule,
+   provideFirebaseApp(() => initializeApp(environment.firebase)),
+   provideFirestore(() => getFirestore()),
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]

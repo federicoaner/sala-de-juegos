@@ -1,44 +1,144 @@
 
-
-    <main>
-        <div class="container py-4">
-        
+      <body>
+    
+  
+    
+   
+    
+    
+    
+        <div class="album py-5 ">
+          <div class="container">
       
-          
-            <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">Bienvenido a la Sala de Juegos</h1>
-              <br>
-              <div class="card" >
-                <img class="card-img-top" src="../../../assets/imagenes/cohete.jfif" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Tp LaboIV</h5>
-                  <p class="card-text">Content</p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+             
+             
+              <!--    --------------       AAHORCADO  ---------------     -->
+              <div class="col">
+                <div class="card shadow-sm">
+                 <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+                  <img src="../../../assets/imagenes/ahorcado.jpg">
+                  <div class="card-body">
+                    <p class="card-text">Ahorcado</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['ahorcado']">Ir</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Como Se Juega</button>
+                      </div>
+                      <small class="text-muted"></small>
+                    </div>
+                  </div>
                 </div>
-                <img class="card-img-bottom" src="" alt="">
-               
+              </div>
+  
+  
+               <!--    --------------       MAYOR MENOR  ---------------     -->
+              <div class="col">
+                <div class="card shadow-sm">
+                  
+                  <img src="../../../assets/imagenes/mayoromenor.png">
+      
+                  <div class="card-body">
+                    <p class="card-text">Mayor o menor</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['mayor-menor']" >Ir </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+             
+              <!--    --------------       Preguntados  ---------------     -->
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="../../../assets/imagenes/preguntados.jfif">
+      
+                  <div class="card-body">
+                    <p class="card-text">Preguntados</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['preguntados']" >Ir</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                      </div>
+                      <small class="text-muted"></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+  
+               <!--    --------------       OTROS  ---------------     -->
+      
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="../../../assets/xbox.png">
+      
+                  <div class="card-body">
+                    <p class="card-text">Otros Juegos</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Ir</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                      </div>
+                      <small class="text-muted"></small>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               
-            
-
-            </div>
-
-          
-        </div>
-        
-         
-      </main>
-
-
-
-
-
-
-
-
-
-
-
-    
-
+               <!--    --------------       OTRO  ---------------     -->
   
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="../../../assets/xbox.png">
+      
+                  <div class="card-body">
+                    <p class="card-text">Otros Juegos</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Ir</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Como se juega</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+             
+             
+              <!--    --------------       OTRO  ---------------     -->
+             
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="../../../assets/xbox.png">
+                  <div class="card-body">
+                    <p class="card-text">Otros Juegos</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Ir</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      
+     
+     
+      
+      
+          <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      
+            
+        </body>

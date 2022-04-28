@@ -16,7 +16,7 @@ import { MayormenorComponent } from './components/mayormenor/mayormenor.componen
 
 const routes: Routes = [
 
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'quiensoy', component: QuiensoyComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
@@ -26,7 +26,7 @@ const routes: Routes = [
  {path:'juegos/tateti',component:TatetiComponent},
  {path:'juegos/memotest',component:MemotestComponent},*/
 
- {path:'juegos',component:JuegosComponent,
+ {path:'home',component:JuegosComponent,
  
  children:[
 

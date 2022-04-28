@@ -54,6 +54,17 @@
       width: 100%;
       opacity: 0.9;
     }
+
+    .btn-warning {
+      background-color:rgb(215, 208, 65);
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
     .bttn:hover {
       opacity: 1;
       background-color: darkcyan;

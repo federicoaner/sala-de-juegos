@@ -12,18 +12,19 @@
         -->
         
         <label for="mail">Email:</label>
-        <input type="email" id="mail" name="user_email">
+        <input type="email" id="mail" name="user_email" [(ngModel)]="this.email" >
         
         <label for="password">Password:</label>
-        <input type="password" id="password" name="user_password">
+        <input type="password" id="password" name="user_password" [(ngModel)]="this.password" >
         
        
       </fieldset>
       
       
      
-      <button type="submit">Registrarme</button>
-    <!--  <button class="btn btn-warning" type="button">Registrarme</button> -->
+      <!-- <button type="submit" >Registrarme   </button> -->
+      <button class="btn btn-warning" type="button"   (click)="Registrarse()"   >Registrarme</button> 
+     
    </form>
     
   </body>

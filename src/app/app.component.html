@@ -11,31 +11,43 @@
           <li><a href="#" class="nav-link px-2 text-white" > <img class="imagen" src="../assets/xbox.png"  alt=""></a></li>
          
           <li class="nav-item">
-            <a class="nav-link active"  aria-current="page" [routerLink]="['/home']" >Home</a>
+            <a class="nav-link active"  aria-current="page" *ngIf="this.usuario.logged" [routerLink]="['/home']" >Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/quiensoy']" >Quien Soy</a>
           </li>
       
           
-
+          <!--
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/juegos']" >Juegos</a>
 
           </li>
 
+          -->
+
           <!-- Boton Login-->
         
           <li class="nav-item div-botones">
            
-            <button type="button" class="btn btn-success btn-space"   [routerLink]="['/login']"> Login</button>
+            <button type="button" class="btn btn-success btn-space"   *ngIf="!this.usuario.logged" [routerLink]="['/login']"> Login</button>
           </li>
 
           <li class="nav-item">
           
           
-          <button type="button" class="btn btn-info btn-space letra-registro"  [routerLink]="['/registro']"> Registro</button>
+          <button type="button" class="btn btn-info btn-space letra-registro" *ngIf="!this.usuario.logged"  [routerLink]="['/registro']"> Registro</button>
           </li>
+
+          <li class="nav-item ">
+          <a class="text txt-bienvenido" *ngIf="this.usuario.logged?.email">Bienvenido, {{this.usuario.logged.email}}</a>
+        </li>
+
+          <li class="nav-item">
+          
+          
+            <button type="button" class="btn btn-info btn-space letra-registro" *ngIf="this.usuario.logged"   (click)="Logout()"> Logout</button>
+            </li>
         
 
       <

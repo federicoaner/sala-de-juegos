@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Usuario } from './entidades/usuario';
+import { LoginUserService } from './sericios/login-user.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +12,17 @@ import { Usuario } from './entidades/usuario';
 export class AppComponent {
   title = 'sala-de-juegos';
 
-  miusuario:Usuario;
+  
 
-  constructor (){
-    this.miusuario=new Usuario;
+  constructor (public usuario:LoginUserService,private auth:AngularFireAuth,private router:Router ){
+    
   }
 
+  Logout(){
 
-  mostrar():void{
+    this.auth.signOut();
+    this.router.navigateByUrl('login');
 
-    console.info(this.miusuario);
   }
 
 

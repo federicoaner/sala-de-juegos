@@ -45,7 +45,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     //provideAuth(() => getAuth()),
     //provideFirestore(() => getFirestore()),
     //agregueyo
-   AngularFireModule.initializeApp(environment.firebaseConfig),
+   AngularFireModule.initializeApp(environment.firebase),
    AngularFireAuthModule,
    AngularFirestoreModule,
    provideFirebaseApp(() => initializeApp(environment.firebase)),

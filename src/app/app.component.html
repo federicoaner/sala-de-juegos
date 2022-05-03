@@ -11,7 +11,9 @@
           <li><a href="#" class="nav-link px-2 text-white" > <img class="imagen" src="../assets/xbox.png"  alt=""></a></li>
          
           <li class="nav-item">
-            <a class="nav-link active"  aria-current="page" *ngIf="this.usuario.logged" [routerLink]="['/home']" >Home</a>
+
+         <!---->  <a class="nav-link active"  aria-current="page"   *ngIf="this.usuario.logged" [routerLink]="['/home']" >Home</a> 
+      <!-- <a class="nav-link active" aria-current="page" [routerLink]="['']">Home</a>  -->
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/quiensoy']" >Quien Soy</a>

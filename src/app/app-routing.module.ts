@@ -12,22 +12,31 @@ import { JuegosComponent } from './components/juegos/juegos.component';
 import { PreguntadosComponent } from './components/preguntados/preguntados.component';
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './components/mayormenor/mayormenor.component';
+import { HomeguardGuard } from './guards/homeguard.guard';
 
 
 const routes: Routes = [
 
+  //{path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'quiensoy', component: QuiensoyComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'quiensoy', component: QuiensoyComponent},
+  //{path: 'home', component: HomeComponent, canActivate: [HomeguardGuard]  },
   {path: 'login', component: LoginComponent},
   {path: 'registro', component:RegistroComponent},
+
+ 
+  {path:'home/mayor-menor',component:MayormenorComponent},
+  {path:'home/ahorcado',component:AhorcadoComponent},
+
   /*
  {path:'juegos',component:JuegosComponent},
  {path:'juegos/tateti',component:TatetiComponent},
  {path:'juegos/memotest',component:MemotestComponent},*/
 
- {path:'home',component:JuegosComponent,
- 
+ /*
+ {path:'home',component:HomeComponent, canActivate: [HomeguardGuard],
+  
  children:[
 
   
@@ -37,6 +46,7 @@ const routes: Routes = [
   
 
  ]},
+ */
  
  
  

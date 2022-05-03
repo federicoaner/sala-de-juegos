@@ -24,6 +24,9 @@
      
       <!-- <button type="submit" >Registrarme   </button> -->
       <button class="btn btn-warning" type="button"   (click)="Registrarse()"   >Registrarme</button> 
+      
+      <br>
+      <p *ngIf="responseMessage" class="ErrorLogin" >{{responseMessage}}</p>
      
    </form>
     

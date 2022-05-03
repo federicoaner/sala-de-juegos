@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   title = 'sala-de-juegos';
+  responseMessage : boolean | string =false;
 
   miusuario:Usuario;
 
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.email="";
     this.password="";
   };
-  
+  /*
     Loguearse(){
 
       let user = {
@@ -38,7 +39,56 @@ export class LoginComponent implements OnInit {
 
       });
       
+    } */
+
+   
+
+
+    Loguearse(){
+      try{
+
+        let user = {
+          email: this.email,
+          password: this.password
+        }
+    
+        this.auth.Login(this.email,this.password).then((response)=>{
+          this.router.navigateByUrl('/home');
+  
+        })
+      
+
+
+        .catch(err =>{
+          //this.responseMessage = err.message;
+          switch(err.code)
+          {
+            case 'auth/invalid-email':
+             this.responseMessage= 'Email invalido.';
+              break;     
+            case 'auth/user-disabled':
+              this.responseMessage= 'Usuario deshabilitado.';
+              break;
+            case 'auth/user-not-found':
+              this.responseMessage= 'Usuario no encontrado.';
+              break;       
+            case 'auth/wrong-password':
+              this.responseMessage= 'Contrasenia incorrecta.';
+              break;  
+            case 'auth/user-not-found':
+              this.responseMessage='Usuario no encontrado.';
+              break;
+            default:
+              this.responseMessage = 'Error';
+          }
+          console.log('Error en login.ts: ',err);
+        }); 
+  
+      }catch(err){
+        console.log("Error ingresar",err);
+      }
     }
+    
 
     
    AccesoRapido(){

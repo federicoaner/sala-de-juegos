@@ -13,6 +13,7 @@ export class RegistroComponent implements OnInit {
   email: string;
   password: string;
   alertError : string = "";
+  responseMessage : boolean | string =false;
 
   constructor(private router:Router, private auth:AngularFireAuth, private user:LoginUserService){
     this.email="";
@@ -58,6 +59,7 @@ export class RegistroComponent implements OnInit {
 
       if(error.code == "auth/email-already-in-use"){
         this.alertError = "Ya existe un Usuario con esa cuenta.";
+        this.responseMessage="Ya exisiste un Usuario con esa cuenta";
       
       }
     });

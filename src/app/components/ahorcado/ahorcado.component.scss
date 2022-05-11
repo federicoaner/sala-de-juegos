@@ -1,0 +1,52 @@
+
+.row{
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button{
+    margin-top: 20px;
+  //  margin-bottom: 20px; 
+}
+
+
+.btn1 {
+  width: 110px;
+   height: 40px;
+  background: rgb(108, 195, 224);
+   color: rgb(40, 40, 97);
+   border-radius: 18px;
+   outline: none;
+   margin: 50px;
+}
+.btn2 {
+   
+   background: rgb(224, 108, 183);
+    color: rgb(40, 40, 97);
+    border-radius: 18px;
+    outline: none;
+  
+}
+.btn3 {
+   width: 110px;
+    height: 40px;
+   background: rgb(108, 224, 133);
+    color: rgb(40, 40, 97);
+    border-radius: 18px;
+    outline: none;
+   margin: 50px;
+}
+
+
+.d-inline{
+
+ 
+  color: rgb(251, 251, 251);
+
+
+} 
+
+.error{
+  color: antiquewhite;
+}

@@ -1,0 +1,67 @@
+<main class="content">
+    <div class="container p-0">
+
+		<h1 class="h3 mb-3">Chat</h1>
+
+		<div class="card">
+			<div class="row g-0">
+				
+				<div class="col-12 col-lg-7 col-xl-9">
+				
+
+					<div class="position-relative">
+						<div class="chat-messages p-4">
+
+							<div class="chat-message-right pb-4" *ngFor="let item of items | async" class="chat">
+								<div>
+									
+									<div class="text-muted small text-nowrap mt-2">{{item.time}}</div>
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
+									
+                                    <ul>
+                                        <div  class="agent clearfix">
+                                            <div class="chat-body clearfix">
+                                                <div class="header clearfix">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
+                                                    <div class="font-weight-bold mb-1">{{item.name}}</div> 
+                                                       
+                                                </div>
+                                                <p>
+                                                    {{item.message}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                   
+                                    </ul>
+								</div>
+							</div>
+
+						
+
+						
+
+						
+
+							
+
+					
+
+						
+
+
+						</div>
+					</div>
+
+					<div class="flex-grow-0 py-3 px-4 border-top">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Escribi un mensaje" [(ngModel)]="mensaje">
+							<button class="btn btn-primary" (click)="enviarMensaje()">Enviar</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

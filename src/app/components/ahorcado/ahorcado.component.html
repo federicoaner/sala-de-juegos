@@ -1,1 +1,51 @@
-<p>ahorcado works!</p>
+
+
+
+ <div class="container-fluid bg-dark" style='height:100%; width:100%;'>
+
+<div class="row" >
+
+    <div class="col text-center">
+
+        <div class="error">{{error}}</div>
+
+            <div>
+
+            <img *ngIf="error==0" style="height: 30%; width: 30%;" src="assets/ahorcado/img0.png">
+            <img *ngIf="error==1" style="height: 30%; width: 30%;" src="assets/ahorcado/img1.png">
+            <img *ngIf="error==2" style="height: 30%; width: 30%;" src="assets/ahorcado/img2.png">
+            <img *ngIf="error==3" style="height: 30%; width: 30%;" src="assets/ahorcado/img3.png">
+            <img *ngIf="error==4" style="height: 30%; width: 30%;" src="assets/ahorcado/img4.png">
+            <img *ngIf="error==5" style="height: 30%; width: 30%;" src="assets/ahorcado/img5.png">
+            <img *ngIf="error>=6" style="height: 30%; width: 30%;" src="assets/ahorcado/img6.png">
+
+            
+
+            </div>
+
+
+        <button class="btn btn-primary" class="btn1" *ngIf="!empezo "  (click)="comenzar()" type="button">Jugar</button>
+        
+       <div *ngIf="empezo">
+        <div   *ngFor="let item of palabraGuiones"  class="d-inline">
+            <h1 class="d-inline p-2">{{item}}</h1>
+            
+        </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="row" >
+    <div class="col text-center">
+        <button  class="letras"  *ngFor="let letra of letras" class="btn btn-success" (click)="tomarLetra(letra)"> {{ letra }} </button>
+    </div>
+</div>
+
+<br> <br>
+
+
+</div>

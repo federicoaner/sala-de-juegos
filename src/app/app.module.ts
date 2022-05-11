@@ -19,7 +19,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ChatComponent } from './components/chat/chat.component'; 
 
 
 
@@ -35,7 +36,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     JuegosComponent,
     PreguntadosComponent,
     AhorcadoComponent,
-    MayormenorComponent
+    MayormenorComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

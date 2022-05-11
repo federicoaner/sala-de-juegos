@@ -13,6 +13,7 @@ import { PreguntadosComponent } from './components/preguntados/preguntados.compo
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './components/mayormenor/mayormenor.component';
 import { HomeguardGuard } from './guards/homeguard.guard';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,8 @@ const routes: Routes = [
  
   {path:'home/mayor-menor',component:MayormenorComponent},
   {path:'home/ahorcado',component:AhorcadoComponent},
+  {path:'home/preguntados',component:PreguntadosComponent},
+  {path:'chat',component:ChatComponent},
 
   /*
  {path:'juegos',component:JuegosComponent},

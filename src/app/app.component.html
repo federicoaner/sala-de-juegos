@@ -18,6 +18,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/quiensoy']" >Quien Soy</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  *ngIf="this.usuario.logged" [routerLink]="['/chat']" >Chat</a>
+          </li>
       
           
           <!--

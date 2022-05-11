@@ -7,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreguntadosComponent implements OnInit {
 
-  constructor() { }
+
+  //const audioplay = new Audio('/saraza/algo.wav').play();
+
+ //let pruebaAudio : HTMLAudioElement = new Audio('./assets/audio.wav');
+
+ //const audio = require('./assets/song.mp3');
+   prueba: HTMLAudioElement = new Audio("./assets/audio.wav");
+   
+   tocar(){
+    this.prueba.play();
+   }
+
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
   }

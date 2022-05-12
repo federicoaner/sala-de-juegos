@@ -20,6 +20,7 @@ export class AhorcadoComponent implements OnInit {
   perdio: boolean = false;
   aciertos = 0;
   mensaje:string="";
+  nroImagen:number=0;
 
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
@@ -40,6 +41,7 @@ export class AhorcadoComponent implements OnInit {
     this.gano = false;
     this.perdio = false;
     this.flag = false;
+    this.nroImagen=0;
 
     this.error = 0;
   }
@@ -62,6 +64,7 @@ export class AhorcadoComponent implements OnInit {
 
       if (!this.flag) {
         this.error++;
+        this.nroImagen++;
       }
 
       if (this.aciertos == this.palabraRandom.length) { //GANO
@@ -89,7 +92,10 @@ export class AhorcadoComponent implements OnInit {
           this.empezo = false;
           this.error = 0;
           this.aciertos = 0;
+          
           alert("perdiste");
+          this.nroImagen=0;
+
 
         }, 1000);
 

@@ -73,6 +73,7 @@ export class AhorcadoComponent implements OnInit {
 
           this.error = 0;
           this.aciertos = 0;
+          alert("Ganaste");
 
         }, 1000);
 
@@ -88,6 +89,7 @@ export class AhorcadoComponent implements OnInit {
           this.empezo = false;
           this.error = 0;
           this.aciertos = 0;
+          alert("perdiste");
 
         }, 1000);
 

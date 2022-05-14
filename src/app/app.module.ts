@@ -21,6 +21,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ChatComponent } from './components/chat/chat.component'; 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -37,12 +39,21 @@ import { ChatComponent } from './components/chat/chat.component';
     PreguntadosComponent,
     AhorcadoComponent,
     MayormenorComponent,
-    ChatComponent
+    ChatComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 1500,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true,
+
+     
+    }),
+    BrowserAnimationsModule,
    // provideFirebaseApp(() => initializeApp(environment.firebase)),
     //provideAuth(() => getAuth()),
     //provideFirestore(() => getFirestore()),

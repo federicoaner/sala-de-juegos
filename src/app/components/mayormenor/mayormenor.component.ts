@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ToasterService } from 'src/app/sericios/toaster.service';
+//import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-mayormenor',
   templateUrl: './mayormenor.component.html',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MayormenorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr:ToasterService) {
+
+    
+   }
 
   ngOnInit(): void {
     //this.comenzar();
@@ -41,7 +47,8 @@ export class MayormenorComponent implements OnInit {
     
     else{
     
-     alert("Perdiste el numero secreto era Menor");
+     //alert("Perdiste el numero secreto era Menor");
+      this.toastr.mostrarToastFail("Perdiste!","el numero secreto era menor")
     
       this.comenzar();
       this.perdio=true;
@@ -58,7 +65,8 @@ export class MayormenorComponent implements OnInit {
     
     else{
     
-     alert("Perdiste el numero era Mayor");
+   
+    this.toastr.mostrarToastFail('Perdiste!', 'el numero era mayor');
      this.comenzar();
      this.perdio=true;
      this.comienzo=false;
@@ -67,6 +75,8 @@ export class MayormenorComponent implements OnInit {
   }
 
 
+
+  
 
 
 }

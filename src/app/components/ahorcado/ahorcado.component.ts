@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { arrayRemove } from 'firebase/firestore';
+import { ToasterService } from 'src/app/sericios/toaster.service';
 
 @Component({
   selector: 'app-ahorcado',
@@ -24,7 +25,7 @@ export class AhorcadoComponent implements OnInit {
 
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-  constructor() {
+  constructor(private toaster:ToasterService) {
     //this.palabraGuiones="";
   }
 
@@ -72,11 +73,13 @@ export class AhorcadoComponent implements OnInit {
         setTimeout(() => {
           this.gano = true;
           console.log('Ganaste!!!!');
+
           this.empezo = false;
 
           this.error = 0;
           this.aciertos = 0;
-          alert("Ganaste");
+         //alert("Ganaste");
+         this.toaster.mostrarToastSuccess("Ganaste","Acertaste la Palabra!!!");
 
         }, 1000);
 
@@ -92,8 +95,8 @@ export class AhorcadoComponent implements OnInit {
           this.empezo = false;
           this.error = 0;
           this.aciertos = 0;
-          
-          alert("perdiste");
+          this.toaster.mostrarToastFail("Perdiste!","volve a intentar!");
+        //  alert("perdiste");
           this.nroImagen=0;
 
 

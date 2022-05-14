@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-preguntados',
@@ -6,24 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./preguntados.component.scss']
 })
 export class PreguntadosComponent implements OnInit {
-
-
-  //const audioplay = new Audio('/saraza/algo.wav').play();
+ //const audioplay = new Audio('/saraza/algo.wav').play();
 
  //let pruebaAudio : HTMLAudioElement = new Audio('./assets/audio.wav');
 
  //const audio = require('./assets/song.mp3');
-   prueba: HTMLAudioElement = new Audio("./assets/audio.wav");
-   
-   tocar(){
-    this.prueba.play();
-   }
 
-  constructor(
 
-  ) { }
+ constructor(private toaster: ToastrService) {
+  
+ }
 
-  ngOnInit(): void {
-  }
+ ngOnInit(): void {
+ }
+
+
 
 }
+
+

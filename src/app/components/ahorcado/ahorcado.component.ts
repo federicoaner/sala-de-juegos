@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { arrayRemove } from 'firebase/firestore';
 import { ToasterService } from 'src/app/sericios/toaster.service';
+import { LoginUserService } from 'src/app/sericios/login-user.service';
+import { UsuarioPuntuaje } from 'src/app/entidades/usuario-puntuaje';
 
 @Component({
   selector: 'app-ahorcado',
@@ -22,11 +24,28 @@ export class AhorcadoComponent implements OnInit {
   aciertos = 0;
   mensaje:string="";
   nroImagen:number=0;
+  puntajeAcumulado:number;
 
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-  constructor(private toaster:ToasterService) {
-    //this.palabraGuiones="";
+  constructor(private toaster:ToasterService,private usuario:LoginUserService) {
+    
+      
+    let  dato : any= localStorage.getItem(usuario.logged.email);
+
+      if(dato==null ){
+
+        this.puntajeAcumulado=0;
+      }else{
+
+      let algo= JSON.parse(dato);
+      
+      this.puntajeAcumulado= algo.puntuacion;
+      }
+      
+
+
+
   }
 
   ngOnInit(): void {
@@ -80,6 +99,28 @@ export class AhorcadoComponent implements OnInit {
           this.aciertos = 0;
          //alert("Ganaste");
          this.toaster.mostrarToastSuccess("Ganaste","Acertaste la Palabra!!!");
+
+         this.puntajeAcumulado+=10;
+
+         let usuarioActual:any=this.usuario.logged.email;
+         let juego="Preguntados";
+         let horaActual=  "hora:  " +  new Date().toLocaleTimeString() + "  dia: " + new Date().toLocaleDateString();
+     
+         let usuarioGuardar:any=new UsuarioPuntuaje(usuarioActual,this.puntajeAcumulado,horaActual);
+     
+        // this.listadoPuntajes=this.puntajeGuardar.getPuntajes();
+        //console.log(this.listadoPuntajes);
+        
+       /*
+          
+         if(this.puntajeAcumulado>10) { 
+        
+         }else{
+           this.puntajeAcumulado=0;
+         }*/
+         
+     
+         localStorage.setItem(this.usuario.logged.email, JSON.stringify(usuarioGuardar));
 
         }, 1000);
 

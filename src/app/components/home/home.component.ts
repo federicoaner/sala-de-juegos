@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  preguntadosClick=false;
+
+
+ @Input() puntaje:any;
+
+  constructor() { 
+
+    
+
+
+  }
 
   ngOnInit(): void {
+  }
+
+
+  recibirPuntaje(puntaje:any){
+    console.log(this.puntaje);
+  }
+
+  btnPreguntados(){
+    return this.preguntadosClick=true;
   }
 
 }

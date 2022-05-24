@@ -23,6 +23,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ChatComponent } from './components/chat/chat.component'; 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiva/juego-audioperceptiva.component';
+import { PuntajesComponent } from './components/puntajes/puntajes.component';
 
 
 
@@ -40,16 +43,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AhorcadoComponent,
     MayormenorComponent,
     ChatComponent,
+    JuegoAudioperceptivaComponent,
+    PuntajesComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    
     ToastrModule.forRoot({
       timeOut: 1500,
       positionClass: 'toast-bottom-center',
       preventDuplicates: true,
+      
 
      
     }),
@@ -62,7 +70,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    AngularFireAuthModule,
    AngularFirestoreModule,
    provideFirebaseApp(() => initializeApp(environment.firebase)),
-   provideFirestore(() => getFirestore())
+   provideFirestore(() => getFirestore()),
+   
    
 
   ],

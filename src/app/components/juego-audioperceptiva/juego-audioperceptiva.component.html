@@ -1,3 +1,136 @@
-
+<!--
 <button class="btn btn-primary" type="button" (click)="tocar()" >sonido Prueba</button>
 <button onmousedown="prueba.play()"></button>
+-->
+
+
+
+<br>
+<br>
+<br>
+
+
+<div class="container-fluid" style='height:100%; width:100%;'>
+
+
+
+
+    <div class="row    justify-content-center text-center">
+        <div class="col-md-12">
+
+            <h5 class="card-header text-white" style="font-size: 30px;">
+                {{this.titulo}}
+
+            </h5>
+
+            <h2 style="font-size: 20px;">
+                Puntaje Acumulado: {{this.puntajeAcumulado}}
+            </h2>
+
+            <button type="button" class="btn1" *ngIf="!this.comienzo" (click)="comenzar()">
+                comenzar
+            </button>
+
+
+            <div *ngIf="this.comienzo">
+
+                <div class="card-body" style="display: block; margin: auto;"
+                    *ngIf=" this.tocado1 && this.tocado2 &&  this.tocado3  && this.contador < 4">
+                    <p class="card-text text-center text-white" style="font-size: 30px">
+                        {{pregunta}}
+                    </p>
+                    <button class="btn btn-primary" type="button" (click)="Llamador()"> ♪ </button>
+                </div>
+
+
+
+                <div class="row" *ngIf=" contador<=2">
+                    <div class="col-md-12">
+
+
+
+
+                        <button *ngIf="!this.tocado1" type="button" class="btn1" (click)="armarEjemplo(1) ">
+                            {{textoEj1}}
+                        </button>
+
+
+                        <button *ngIf="!this.tocado2" type="button" class="btn1" (click)="armarEjemplo(2)">
+                            {{textoEj2}}
+                        </button>
+                        <button *ngIf="!this.tocado3" type="button" class="btn1" (click)="armarEjemplo(3)">
+                            {{textoEj3}}
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12" *ngIf=" this.tocado1 && this.tocado2 &&  this.tocado3 && contador <=2 ">
+
+                        <button type="button" class="btn1" (click)="validarRespuesta(1)">
+                            {{opcion1}}
+                        </button>
+                        <button type="button" class="btn1" (click)="validarRespuesta(2)">
+                            {{opcion2}}
+                        </button>
+                        <button type="button" class="btn1" (click)="validarRespuesta(3)">
+                            {{opcion3}}
+                        </button>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row" *ngIf="   this.contador >= 3">
+                    <div class="col-md-12">
+
+                        
+
+                        <button *ngIf="!this.tocado4" type="button" class="btn1" (click)="armarEjemplo(4)">
+                            {{textoEj4}}
+                        </button>
+
+                        <button *ngIf="!this.tocado5" type="button" class="btn1" (click)="armarEjemplo(5)">
+                            {{textoEj5}}
+                        </button>
+                        <button *ngIf="!this.tocado6" type="button" class="btn1" (click)="armarEjemplo(6)">
+                            {{textoEj6}}
+                        </button>
+
+                    </div>
+                </div>
+
+
+
+                <div class="row" *ngIf="  this.tocado4 && this.tocado5 &&  this.tocado6 && this.contador >= 3">
+                    <div class="col-md-12">
+
+                        
+                        <button type="button" class="btn1" (click)="validarRespuesta(1)">
+                            {{opcion1}}
+                        </button>
+                        <button type="button" class="btn1" (click)="validarRespuesta(2)">
+                            {{opcion2}}
+                        </button>
+                        <button type="button" class="btn1" (click)="validarRespuesta(3)">
+                            {{opcion3}}
+                        </button>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- DIV COMIENZO  -->

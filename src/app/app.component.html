@@ -21,6 +21,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page"  *ngIf="this.usuario.logged" [routerLink]="['/chat']" >Chat</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  *ngIf="this.usuario.logged" [routerLink]="['/puntajes']" >Puntajes</a>
+          </li>
+      
       
           
           <!--
@@ -47,7 +52,11 @@
           <li class="nav-item ">
           <a class="text txt-bienvenido" *ngIf="this.usuario.logged?.email">Bienvenido, {{this.usuario.logged.email}}</a>
         </li>
-
+        
+        
+       
+        
+        
           <li class="nav-item">
           
           
@@ -55,8 +64,7 @@
             </li>
         
 
-      <
-          
+        
          
           
         </ul>

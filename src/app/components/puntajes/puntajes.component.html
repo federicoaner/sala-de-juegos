@@ -1,0 +1,23 @@
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <th>MAIL</th>
+            <th>SESION</th>
+            <th>PUNTAJE TOTAL</th>
+            
+           
+            
+        </thead>
+        <tbody>
+        <tr *ngFor="let puntajes of this.listadoPuntajes | async ">
+        <td>{{puntajes.mail}}</td>
+        <td>{{puntajes.hora}}</td>
+        <td>{{puntajes.puntuacion}}</td>
+      
+     
+       
+        </tr>
+        </tbody>
+        </table>
+    </div>

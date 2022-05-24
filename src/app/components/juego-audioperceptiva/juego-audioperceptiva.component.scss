@@ -1,0 +1,77 @@
+.container-fluid{
+
+  
+    background-color:#6391f3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  .card{
+
+    background-color:#6391f3;
+
+
+}
+
+.card-header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.card-body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+    
+    
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.btn1 {
+    width: 110px;
+     height: 40px;
+    background: rgb(108, 195, 224);
+     color: rgb(40, 40, 97);
+     border-radius: 18px;
+     outline: none;
+     margin: 30px;
+ }
+
+ #circulo {
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	background: rgb(0, 217, 255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+#circulo > p {
+	font-family: sans-serif;
+	color: white;
+	font-size: 2rem;
+	font-weight: bold;
+    
+    
+}

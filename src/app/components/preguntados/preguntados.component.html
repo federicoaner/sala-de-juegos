@@ -1,1 +1,56 @@
-<h1>holis</h1>
+
+<br>
+<br>
+<br>
+
+
+<div class="container-fluid" style='height:100%; width:100%;'>
+	<div class="row   justify-content-center text-center" >
+		<div class="col-md-12">
+			
+				<h5 class="card-header text-white" style="font-size: 30px;">
+					Preguntados
+				</h5>
+
+                <h2  style="font-size: 20px;">
+					Puntaje Acumulado: {{this.puntajeAcumulado}}
+				</h2>
+
+                <button type="button" class="btn1" *ngIf="!this.comienzo" (click)="comenzar()">
+                    comenzar
+                </button> 
+				
+                <div *ngIf="this.comienzo">
+                <div class="card-body" style="display: block; margin: auto;">
+                    <img [src]="this.imgPregunta" alt="" style="width: 400px; height: 230px; padding: 20px;" >
+					
+                    <p class="card-text text-center text-white" style="font-size: 30px">
+						{{pregunta}}
+					</p>
+				</div>
+                <div class="row">
+                    <div class="col-md-12">
+                         
+                        <button type="button" class="btn1" (click)="validarRespuesta(1)">
+                            {{opcion1}}
+                        </button> 
+                        <button type="button" class="btn1"  (click)="validarRespuesta(2)">
+                            {{opcion2}}
+                        </button> 
+                        <button type="button" class="btn1"  (click)="validarRespuesta(3)">
+                            {{opcion3}}
+                        </button> 
+                        <button type="button" class="btn1"  (click)="validarRespuesta(4)">
+                            {{opcion4}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+			
+		</div>
+	</div>
+
+</div>
+
+  

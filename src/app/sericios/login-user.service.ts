@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Usuario } from '../entidades/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,11 @@ export class LoginUserService {
 
   }
 
+  getNombreEmail(){
+    return  this.userInfo.email;
+  }
+   
+  
 
 
   

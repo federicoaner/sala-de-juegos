@@ -16,6 +16,9 @@ import { HomeguardGuard } from './guards/homeguard.guard';
 import { ChatComponent } from './components/chat/chat.component';
 import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiva/juego-audioperceptiva.component';
 
+import { PuntajesComponent } from './components/puntajes/puntajes.component';
+
+
 
 const routes: Routes = [
 
@@ -32,7 +35,11 @@ const routes: Routes = [
   {path:'home/ahorcado',component:AhorcadoComponent},
   {path:'home/preguntados',component:PreguntadosComponent},
   {path:'home/juego-audioperceptiva',component:JuegoAudioperceptivaComponent},
+  //{path:'home/puntajes',component:PuntajesComponent},
+  {path:'puntajes',component:PuntajesComponent},
+
   {path:'chat',component:ChatComponent},
+
 
   /*
  {path:'juegos',component:JuegosComponent},

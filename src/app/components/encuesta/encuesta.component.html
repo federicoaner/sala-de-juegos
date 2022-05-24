@@ -1,0 +1,206 @@
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+   
+    <hr class="mt-0 mb-4">
+    <div class="row">
+     
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Encuesta</div>
+                <div class="card-body">
+                    <form novalidate [formGroup]="forma" (ngSubmit)="enviarEncuesta()">
+                        <!-- Form Group (username)-->
+                      
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Nombre</label>
+                                <input class="form-control" id="inputFirstName" type="text" required formControlName="nombre" placeholder="Nombre" >
+                                <small class="invalid"
+                                *ngIf="forma.controls['nombre'].errors?.['required'] && forma.controls['nombre'].touched">El nombre es requerido  
+                              </small>
+                           
+                            </div>
+
+
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Apellido</label>
+                                <input class="form-control" id="inputLastName" type="text" required formControlName="apellido" placeholder="Apellido" >
+                                <small class="invalid"
+                                *ngIf="forma.controls['apellido'].errors?.['required'] && forma.controls['apellido'].touched">El apellido es requerido  
+                              </small>
+                            </div>
+
+
+
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-3">
+                                <label class="small mb-1" for="inputOrgName">Edad</label>
+                                <input class="form-control" id="inputOrgName" type="text" placeholder="Edad"  formControlName="edad">
+                               <!-- <small class="invalid"
+                                *ngIf="forma.controls['edad'].errors?.['required'] && forma.controls['edad'].touched">La edad es requerida  
+                              </small> -->
+                              <small class="invalid"
+                              *ngIf="forma.controls['edad'].errors?.['min'] || forma.controls['edad'].errors?.['max'] && forma.controls['edad'].touched">
+                              La edad debe ser de 21 a 99 anios.
+                            </small>
+
+                            </div>
+
+                            <!-- Form Group (location)-->
+                            <div class="col-md-9">
+                                <label class="small mb-1" for="inputLocation">Telefono</label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="telefono" value="" formControlName="telefono" maxlength="10">
+                               <small class="invalid"
+                                *ngIf="forma.controls['telefono'].errors?.['required'] && forma.controls['telefono'].touched">El telefono es requerido  
+                                
+                              </small> 
+                           <!--   <small class="invalid"
+                              *ngIf="  forma.controls['telefono'].errors?.['required'] && forma.controls['telefono'].errors?.['maxLength']  && forma.controls['telefono'].touched">
+                              telefono debe tener maximo 10 nros.
+                            </small> -->
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                    
+
+                    
+
+                        <hr>
+
+
+                        <div class="form-group">
+                            <label for="preguntaDos">Cual fue el mejor Juego?</label>
+                            <select class="form-control" id="preguntaDos" formControlName="favorito">
+                            <option>Preguntados</option>
+                            <option>Ahorcado</option>
+                            <option>Mayor o Menor</option>
+                            <option>AudioPerceptiva</option>
+                           </select>
+                            <div  *ngIf="forma.get('favorito')!.invalid && (forma.get('favorito')!.dirty || forma.get('favorito')!.touched)"  class="alert-danger d-inline-flex">
+                                <span>Seleccione una opción</span>
+                            </div>
+                    </div>
+                        <!--
+
+                        <div class="row gx-3 mb-3">
+                          
+                                <label>Que Juego te gusto mas?</label>
+                                <br>
+                
+                                <div>
+                                    <div class="form-check">
+                                        <input type="checkbox"  class="form-check-input" formControlName="favorito" value="MayorMenor"
+                                            >
+                                        <label class="form-check-label" > Mayor o Menor</label>
+                                    </div>
+                
+                                    <div class="form-check">
+                                        <input type="checkbox"  class="form-check-input" formControlName="favorito" value="ahorcado"
+                                            >
+                                        <label class="form-check-label" >Ahorcado</label>
+                                    </div>
+                
+                                    <div class="form-check">
+                                        <input type="checkbox" id="" class="form-check-input" formControlName="favorito" value="AudioPerceptiva"
+                                           >
+                                        <label class="form-check-label" for="" > Audio Perceptiva</label>
+                                    </div>
+                
+                                    <div class="form-check">
+                                        <input type="checkbox" id="" class="form-check-input" formControlName="favorito" value="Preguntados"
+                                            >
+                                        <label class="form-check-label" for="">Preguntados </label>
+                                    </div>
+
+                                   <small class="invalid"
+                                *ngIf="forma.controls['favorito'].errors?.['required'] && forma.controls['favorito'].touched"> favorito es requerido  
+                                
+                              </small> 
+                
+                                </div>
+
+                            
+                        </div>
+
+                        -->
+
+
+                                <hr class="mb-4">
+                <div class="form-group">
+                    <label for="preguntaDos">Como califica nuestra sala de juegos</label>
+                    <select class="form-control" id="preguntaDos" formControlName="calificacion">
+                    <option>Mala</option>
+                    <option>Buena</option>
+                    <option>Muy buena</option>
+                   </select>
+                    <div  *ngIf="forma.get('calificacion')!.invalid && (forma.get('calificacion')!.dirty || forma.get('calificacion')!.touched)"  class="alert-danger d-inline-flex">
+                        <span>Seleccione una opción</span>
+                    </div>
+            </div>
+
+
+       
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+                        <hr>
+
+
+                       <div class="col-sm-8 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="message" margin="30px">Dejanos un comentario</label>
+                                
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Hi there, I would like to....."  margin="10px" formControlName="comentario"></textarea>
+                                <small class="invalid"
+                                *ngIf="forma.controls['comentario'].errors?.['required'] && forma.controls['comentario'].touched">El comentario es requerido  
+                              </small>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 
+                        <div class="row gx-3 mb-3">
+                           
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                            </div>
+                          
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                            </div>
+                        </div> -->
+                        <!-- Save changes button-->
+                       <!-- <button class="btn btn-primary" type="button">Save changes</button> -->
+
+                        <button type="submit" class="btn btn-primary btn-block" 
+                        [disabled]="forma.invalid  ">
+                          Enviar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

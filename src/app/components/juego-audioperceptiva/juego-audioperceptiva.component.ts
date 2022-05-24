@@ -21,14 +21,14 @@ export class JuegoAudioperceptivaComponent implements OnInit {
 
 
   // prueba: HTMLAudioElement = new Audio("./assets/audio.wav");
-  prueba: HTMLAudioElement = new Audio("./assets/mayor.m4a");
+  prueba: HTMLAudioElement = new Audio("./assets/mayor.wav");
 
-  acordeMayor: HTMLAudioElement = new Audio("./assets/mayor.m4a");
-  acordeMenor: HTMLAudioElement = new Audio("./assets/menor.m4a");
-  acordeDisminuido: HTMLAudioElement = new Audio("./assets/disminuido.m4a");
-  quitoPRIMERO: HTMLAudioElement = new Audio("./assets/V-I.m4a");
-  cuartoPRIMERO: HTMLAudioElement = new Audio("./assets/IV-I.m4a");
-  sextoPRIMERO: HTMLAudioElement = new Audio("./assets/VI-I.m4a");
+  acordeMayor: HTMLAudioElement = new Audio("./assets/mayor.wav");
+  acordeMenor: HTMLAudioElement = new Audio("./assets/menor.wav");
+  acordeDisminuido: HTMLAudioElement = new Audio("./assets/disminuido.wav");
+  quitoPRIMERO: HTMLAudioElement = new Audio("./assets/V-I.wav");
+  cuartoPRIMERO: HTMLAudioElement = new Audio("./assets/IV-I.wav");
+  sextoPRIMERO: HTMLAudioElement = new Audio("./assets/VI-I.wav");
 
   contador: number = 1;
   titulo: string = '';

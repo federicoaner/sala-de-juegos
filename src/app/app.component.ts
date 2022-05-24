@@ -14,62 +14,60 @@ import { PuntajeService } from './sericios/puntaje.service';
 })
 export class AppComponent {
   title = 'sala-de-juegos';
-  mail:string;
- // puntajeAcumulado:number;
+  mail: string;
+  // puntajeAcumulado:number;
 
-  
 
-  constructor (public usuario:LoginUserService,private auth:AngularFireAuth,private router:Router,public mailLocal:PuntajeLocalStorajeService,private puntajeFire :PuntajeService ){
-    
-   
-    this.mail=this.usuario.logged.mail;
+
+  constructor(public usuario: LoginUserService, private auth: AngularFireAuth, private router: Router, public mailLocal: PuntajeLocalStorajeService, private puntajeFire: PuntajeService) {
+
+
+    this.mail = this.usuario.logged.mail;
 
 
 
   }
 
   ngOnInit(): void {
-   
-    
-  
+
+
+
   }
 
-  Logout(){
+  Logout() {
 
-   
-    let  dato : any= localStorage.getItem(this.usuario.logged.email);
 
- if(dato!=null){
+    let dato: any = localStorage.getItem(this.usuario.logged.email);
 
-  let algo= JSON.parse(dato);
-   let puntajeAcumulado= algo.puntuacion;
+    if (dato != null) {
 
-  
+      let algo = JSON.parse(dato);
+      let puntajeAcumulado = algo.puntuacion;
 
-   let usuarioActual:any=this.usuario.logged.email;
-   
-   let horaActual= new Date().toLocaleDateString() + " - " +new Date().toLocaleTimeString() ;
+      let usuarioActual: any = this.usuario.logged.email;
 
-   let usuarioGuardar:any=new UsuarioPuntuaje(usuarioActual,puntajeAcumulado,horaActual);
-  console.log(usuarioGuardar);
-  this.puntajeFire.agregarPuntajes({...usuarioGuardar});
+      let horaActual = new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString();
 
- 
-  
- }
-    
+      let usuarioGuardar: any = new UsuarioPuntuaje(usuarioActual, puntajeAcumulado, horaActual);
+      console.log(usuarioGuardar);
+      this.puntajeFire.agregarPuntajes({ ...usuarioGuardar });
 
-   
-   localStorage.clear();
 
- 
+
+    }
+
+
+
+    localStorage.clear();
+
+
 
     this.auth.signOut();
     this.router.navigateByUrl('login');
 
   }
 
- 
+
 
 
 

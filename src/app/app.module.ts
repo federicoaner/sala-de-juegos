@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiva/juego-audioperceptiva.component';
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
+import { EncuestaComponent } from './components/encuesta/encuesta.component';
 
 
 
@@ -45,6 +46,7 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
     ChatComponent,
     JuegoAudioperceptivaComponent,
     PuntajesComponent,
+    EncuestaComponent,
     
   ],
   imports: [
@@ -52,6 +54,7 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     
     ToastrModule.forRoot({
       timeOut: 1500,

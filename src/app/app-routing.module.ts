@@ -17,6 +17,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiva/juego-audioperceptiva.component';
 
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
+import { EncuestaComponent } from './components/encuesta/encuesta.component';
 
 
 
@@ -26,19 +27,15 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'quiensoy', component: QuiensoyComponent},
-  //{path: 'home', component: HomeComponent, canActivate: [HomeguardGuard]  },
   {path: 'login', component: LoginComponent},
   {path: 'registro', component:RegistroComponent},
-
- 
   {path:'home/mayor-menor',component:MayormenorComponent},
   {path:'home/ahorcado',component:AhorcadoComponent},
   {path:'home/preguntados',component:PreguntadosComponent},
   {path:'home/juego-audioperceptiva',component:JuegoAudioperceptivaComponent},
-  //{path:'home/puntajes',component:PuntajesComponent},
   {path:'puntajes',component:PuntajesComponent},
-
   {path:'chat',component:ChatComponent},
+  {path:'encuesta',component:EncuestaComponent},
 
 
   /*

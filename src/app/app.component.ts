@@ -47,7 +47,7 @@ export class AppComponent {
   
 
    let usuarioActual:any=this.usuario.logged.email;
-   let juego="Preguntados";
+   
    let horaActual= new Date().toLocaleDateString() + " - " +new Date().toLocaleTimeString() ;
 
    let usuarioGuardar:any=new UsuarioPuntuaje(usuarioActual,puntajeAcumulado,horaActual);

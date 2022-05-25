@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToasterService } from 'src/app/sericios/toaster.service';
+import { LoginUserService } from 'src/app/sericios/login-user.service';
+import { UsuarioPuntuaje } from 'src/app/entidades/usuario-puntuaje';
 
 @Component({
   selector: 'app-rueda-fortuna',
@@ -17,16 +19,28 @@ random1:number;
 random2:number;
 jugarBandera:boolean;
 reiniciarBandera:boolean;
-puntos:number;
+puntajeAcumulado:number;
 
-  constructor(private toastr:ToasterService) {
+  constructor(private toastr:ToasterService,private usuario:LoginUserService) {
  
     this.random1=Math.floor(Math.random() * 6) + 1;
   this.random2 = Math.floor(Math.random() * 6) + 1;
   
   this.jugarBandera=false;
   this.reiniciarBandera=false;
-  this.puntos=0;
+  //this.puntos=0;
+
+  let  dato : any= localStorage.getItem(usuario.logged.email);
+
+  if(dato==null ){
+
+    this.puntajeAcumulado=0;
+  }else{
+
+  let algo= JSON.parse(dato);
+  
+  this.puntajeAcumulado= algo.puntuacion;
+  }
  
    }
 
@@ -44,7 +58,7 @@ jugar(){
 if ( this.random1 > this.random2){
 
 
-this.puntos+=10;
+this.puntajeAcumulado+=10;
 
 
  setTimeout(() => {
@@ -56,6 +70,22 @@ this.puntos+=10;
  }, 1000);
 
 this.toastr.mostrarToastSuccess ("Ganaste!","!!!")
+
+ //Guardar Puntaje
+
+ this.puntajeAcumulado+=10;
+
+         let usuarioActual:any=this.usuario.logged.email;
+         let juego="Preguntados";
+         let horaActual=  "hora:  " +  new Date().toLocaleTimeString() + "  dia: " + new Date().toLocaleDateString();
+     
+         let usuarioGuardar:any=new UsuarioPuntuaje(usuarioActual,this.puntajeAcumulado,horaActual);
+         
+     
+         localStorage.setItem(this.usuario.logged.email, JSON.stringify(usuarioGuardar));
+
+
+
 }
 else if (this.random2 > this.random1){
 

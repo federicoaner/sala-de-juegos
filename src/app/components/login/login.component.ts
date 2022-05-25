@@ -97,6 +97,13 @@ export class LoginComponent implements OnInit {
     //this.router.navigateByUrl('/home');
 
   }
+
+  AccesoAdmin(){
+    this.email = 'admin@admin.com';
+    this.password = 'admin1234';
+    //this.router.navigateByUrl('/home');
+
+  }
     
 
   /*

@@ -18,7 +18,8 @@ import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiv
 
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
-
+import { ListadoEncuestasComponent } from './components/listado-encuestas/listado-encuestas.component';
+import { AdminGuard } from './guards/admin.guard';
 
 
 const routes: Routes = [
@@ -36,6 +37,8 @@ const routes: Routes = [
   {path:'puntajes',component:PuntajesComponent},
   {path:'chat',component:ChatComponent},
   {path:'encuesta',component:EncuestaComponent},
+  {path:'encuesta-admin',component:ListadoEncuestasComponent,canActivate:[AdminGuard]},
+
 
 
   /*

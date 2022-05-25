@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiva/juego-audioperceptiva.component';
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { ListadoEncuestasComponent } from './components/listado-encuestas/listado-encuestas.component';
 
 
 
@@ -47,6 +48,7 @@ import { EncuestaComponent } from './components/encuesta/encuesta.component';
     JuegoAudioperceptivaComponent,
     PuntajesComponent,
     EncuestaComponent,
+    ListadoEncuestasComponent,
     
   ],
   imports: [

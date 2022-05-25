@@ -18,21 +18,13 @@ export class PuntajesComponent implements OnInit {
 
     this.listadoPuntajes=listado.getPuntajes();
 
-    /*
-    let dato=this.mailLocal.getMail();
-    console.log(dato);
-    */
-  
-  
+   
     
     }
 
   
 
-   
-
-   
-
+  
 
 
   ngOnInit(): void {

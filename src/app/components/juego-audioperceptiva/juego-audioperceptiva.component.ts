@@ -77,30 +77,11 @@ export class JuegoAudioperceptivaComponent implements OnInit {
   }
 
 
+  pregunta1: string[] = ['Nivel I', '¿Que tipo de acorde suena?','Mayor ','Menor ','Disminuido ', '1'];
 
-  pregunta1: string[] = ['Nivel I',
-    '¿Que tipo de acorde suena?',
-    'Mayor ',
-    'Menor ',
-    'Disminuido ',
+  pregunta2: string[] = ['Nivel II','¿que tipo de acorde suena?','Mayor','Menor','Disminuido','2'];
 
-    '1'];
-
-  pregunta2: string[] = ['Nivel II',
-    '¿que tipo de acorde suena?',
-    'Mayor',
-    'Menor',
-    'Disminuido',
-
-    '2'];
-
-  pregunta3: string[] = ['Nivel III',
-    '¿que tipo de Cadencia Suena?',
-    'IV-I',
-    'V-I',
-    'VI-V',
-
-    '2'];
+  pregunta3: string[] = ['Nivel III','¿que tipo de Cadencia Suena?','IV-I','V-I','VI-V','2'];
 
 
   constructor(private toast: ToasterService, private puntajeGuardar: PuntajeService, private usuario: LoginUserService) {
@@ -277,7 +258,6 @@ export class JuegoAudioperceptivaComponent implements OnInit {
 
 
   }
-
 
 
   perdio() {

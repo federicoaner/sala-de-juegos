@@ -8,7 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white" > <img class="imagen" src="../assets/xbox.png"  alt=""></a></li>
+          <li><a  class="nav-link px-2 text-white" > <img class="imagen" src="../assets/xbox.png"  ></a></li>
          
           <li class="nav-item">
 
@@ -28,6 +28,10 @@
        
           <li class="nav-item">
             <a class="nav-link active" aria-current="page"  *ngIf="this.usuario.logged" [routerLink]="['/encuesta']" >Encuesta</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  *ngIf="this.usuario.logged" [routerLink]="['/encuesta-admin']" >Encuestas(admin)</a>
           </li>
       
       

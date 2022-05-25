@@ -20,6 +20,7 @@ import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { ListadoEncuestasComponent } from './components/listado-encuestas/listado-encuestas.component';
 import { AdminGuard } from './guards/admin.guard';
+import { RuedaFortunaComponent } from './components/rueda-fortuna/rueda-fortuna.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'home/ahorcado',component:AhorcadoComponent},
   {path:'home/preguntados',component:PreguntadosComponent},
   {path:'home/juego-audioperceptiva',component:JuegoAudioperceptivaComponent},
+  {path:'home/dados',component:RuedaFortunaComponent},
   {path:'puntajes',component:PuntajesComponent},
   {path:'chat',component:ChatComponent},
   {path:'encuesta',component:EncuestaComponent},

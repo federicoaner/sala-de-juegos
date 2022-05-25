@@ -28,6 +28,8 @@ import { JuegoAudioperceptivaComponent } from './components/juego-audioperceptiv
 import { PuntajesComponent } from './components/puntajes/puntajes.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { ListadoEncuestasComponent } from './components/listado-encuestas/listado-encuestas.component';
+import { RuedaFortunaComponent } from './components/rueda-fortuna/rueda-fortuna.component';
+import { NgxWheelModule } from 'ngx-wheel';
 
 
 
@@ -49,6 +51,7 @@ import { ListadoEncuestasComponent } from './components/listado-encuestas/listad
     PuntajesComponent,
     EncuestaComponent,
     ListadoEncuestasComponent,
+    RuedaFortunaComponent,
     
   ],
   imports: [
@@ -57,6 +60,7 @@ import { ListadoEncuestasComponent } from './components/listado-encuestas/listad
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxWheelModule,
     
     ToastrModule.forRoot({
       timeOut: 1500,

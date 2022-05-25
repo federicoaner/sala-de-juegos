@@ -1,0 +1,21 @@
+
+<body>
+    <div class="container">
+        <h2>SUMA PUNTOS!</h2>
+        <h3> Puntos Acumulados: {{this.puntos}}</h3>
+        <div class="dice">
+            <p>Jugador 1</p>
+            <img class="img1" src="/../../assets/dice{{this.nroImagen1}}.png">
+        </div>
+        <div class="dice">
+            <p>Maquina</p>
+            <img class="img2" src="/../../assets/dice{{this.nroImagen2}}.png">
+        </div>
+        <div>
+            <button type="button"  (click)="jugar()">Tira los Dados!</button>
+           <!-- <button type="button"*ngIf="this.jugarBandera"  (click)="reiniciar()">Reiniciar!</button> -->
+
+        </div>
+    </div>
+  
+</body>
